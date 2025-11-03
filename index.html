@@ -1,150 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harsh AI Labs</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(circle at center, #000010, #000000);
-      overflow: hidden;
-      color: #3b82f6;
-      text-align: center;
       height: 100vh;
+      background: radial-gradient(circle at top, #000814, #000000);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      color: #3b82f6;
-      text-shadow: 0 0 25px #3b82f6, 0 0 50px #3b82f6;
-      margin-bottom: 40px;
-      animation: glow 2s ease-in-out infinite alternate, fadeIn 2s ease-in-out;
-    }
-
-    .hero img {
-      width: 140px;
-      filter: drop-shadow(0 0 15px #3b82f6);
-      border-radius: 12px;
-      margin-bottom: 20px;
-      animation: pulse 3s infinite ease-in-out;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      color: #3b82f6;
-      text-shadow: 0 0 20px #3b82f6, 0 0 40px #3b82f6;
-      margin: 0;
-      animation: glow 2s ease-in-out infinite alternate, fadeIn 3s ease-in-out;
-    }
-
-    .tagline {
-      color: #b3c7ff;
-      font-size: 1.2rem;
-      margin-top: 15px;
-      text-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6;
-      border-right: 2px solid #3b82f6;
-      white-space: nowrap;
+      color: #ffffff;
+      font-family: 'Orbitron', sans-serif;
       overflow: hidden;
-      width: 0;
-      animation: typing 4s steps(40, end) 1s forwards, glow 2s ease-in-out infinite alternate;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: #3b82f6;
+      text-shadow: 0 0 20px #3b82f6, 0 0 40px #1d4ed8;
+      animation: glow 2s ease-in-out infinite alternate;
+      letter-spacing: 2px;
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6; }
-      to { text-shadow: 0 0 25px #3b82f6, 0 0 35px #3b82f6; }
+      from {
+        text-shadow: 0 0 5px #3b82f6, 0 0 10px #1d4ed8;
+      }
+      to {
+        text-shadow: 0 0 20px #3b82f6, 0 0 40px #1d4ed8;
+      }
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      margin: 25px 0;
+      animation: pulse 2s infinite alternate;
+      filter: drop-shadow(0 0 12px #3b82f6);
     }
 
     @keyframes pulse {
-      0%, 100% { filter: drop-shadow(0 0 10px #3b82f6); }
-      50% { filter: drop-shadow(0 0 25px #3b82f6); }
+      from { transform: scale(1); filter: drop-shadow(0 0 8px #3b82f6); }
+      to { transform: scale(1.1); filter: drop-shadow(0 0 18px #60a5fa); }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .tagline {
+      font-size: 1.2rem;
+      color: #a5b4fc;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #60a5fa;
+      width: 0ch;
+      animation: typing 5s steps(40, end) 1s forwards, glow 2s ease-in-out infinite alternate;
     }
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 24ch; }
+      to { width: 34ch; } /* Enough for full line */
     }
+
+    .emoji {
+      font-size: 1.3rem;
+      margin-right: 6px;
+    }
+
+    /* Optional: glowing button for future navigation */
+    .enter-btn {
+      margin-top: 30px;
+      padding: 12px 26px;
+      font-size: 1.1rem;
+      color: #fff;
+      background: transparent;
+      border: 2px solid #3b82f6;
+      border-radius: 30px;
+      cursor: pointer;
+      text-shadow: 0 0 10px #3b82f6;
+      box-shadow: 0 0 15px #1d4ed8;
+      transition: 0.3s ease-in-out;
+    }
+
+    .enter-btn:hover {
+      background: #3b82f6;
+      color: #000;
+      box-shadow: 0 0 25px #60a5fa;
+    }
+
   </style>
 </head>
 <body>
-  <canvas id="particles"></canvas>
+  <h1>Harsh AI Labs</h1>
+  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Harsh AI Labs Logo" class="logo">
+  <h1>Harsh AI Labs</h1>
+  <div class="tagline"><span class="emoji">⚡</span>Innovating the Future with AI<span class="emoji">⚡</span></div>
 
-  <header>
-    <h1>Harsh AI Labs</h1>
-  </header>
-
-  <section class="hero">
-    <img src="logo.png" alt="Harsh AI Labs Logo">
-    <h2>Harsh AI Labs</h2>
-    <p class="tagline">⚡ Innovating the Future with AI ⚡</p>
-  </section>
-
-  <script>
-    const canvas = document.getElementById("particles");
-    const ctx = canvas.getContext("2d");
-
-    let particles = [];
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-
-    function createParticles() {
-      particles = [];
-      for (let i = 0; i < 80; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          size: Math.random() * 2,
-          speedX: (Math.random() - 0.5) * 0.5,
-          speedY: (Math.random() - 0.5) * 0.5,
-        });
-      }
-    }
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#3b82f6";
-      particles.forEach(p => {
-        p.x += p.speedX;
-        p.y += p.speedY;
-        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      requestAnimationFrame(animateParticles);
-    }
-
-    createParticles();
-    animateParticles();
-  </script>
+  <!-- Optional future link -->
+  <!-- <button class="enter-btn" onclick="window.location.href='projects.html'">Enter Site</button> -->
 </body>
 </html>
