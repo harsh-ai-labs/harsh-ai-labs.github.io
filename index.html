@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harsh AI Labs</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #001f3f, #0074d9);
+      color: white;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00bfff; }
+      to { text-shadow: 0 0 30px #00ffff; }
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-top: 15px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 28px;
+      font-size: 1em;
+      border: none;
+      border-radius: 25px;
+      background: #00bfff;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00ffff;
+      color: #001f3f;
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Harsh AI Labs 🤖</h1>
+  <p>Exploring the future of Artificial Intelligence — simple, creative, and powerful tools for everyone.</p>
+  <button class="btn" onclick="alert('Coming soon — Harsh AI Projects! 🚀')">Explore Projects</button>
+</body>
+</html>
