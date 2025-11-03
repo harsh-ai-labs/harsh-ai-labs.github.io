@@ -5,135 +5,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harsh AI Labs</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at top left, #001F3F, #001030);
+      background: radial-gradient(circle at top, #020617, #000);
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    header h1 {
+      color: #3b82f6;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #3b82f6;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      margin-top: 80px;
+      background: linear-gradient(135deg, #000 0%, #020617 100%);
+      animation: bgMove 6s infinite alternate ease-in-out;
     }
 
-    h1 {
+    @keyframes bgMove {
+      0% {background-position: 0 0;}
+      100% {background-position: 100% 100%;}
+    }
+
+    .hero h2 {
       font-size: 3rem;
-      letter-spacing: 2px;
-      margin: 0;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
-    h2 {
-      font-weight: 400;
-      color: #00d4ff;
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #3b82f6; }
+      to { text-shadow: 0 0 25px #60a5fa; }
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #cbd5e1;
     }
 
     .section {
-      width: 90%;
-      max-width: 800px;
+      padding: 100px 10%;
       text-align: center;
-      margin-top: 60px;
-      line-height: 1.7;
+    }
+
+    .section h3 {
+      color: #3b82f6;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 15px;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #3b82f6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* Contact form */
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea, button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    input, textarea {
+      background: #1e293b;
+      color: white;
     }
 
     button {
-      background: linear-gradient(90deg, #00d4ff, #0066ff);
-      border: none;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-size: 1rem;
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
       color: white;
+      font-weight: 600;
       cursor: pointer;
       transition: 0.3s;
     }
 
     button:hover {
-      opacity: 0.8;
       transform: scale(1.05);
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 30px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade {
-      animation: fadeIn 2s ease-in-out;
     }
   </style>
 </head>
 <body>
-  <header class="fade">
-    <h1>🚀 Harsh AI Labs</h1>
-    <h2>Innovating the Future with Intelligence</h2>
+
+  <header>
+    <h1>Harsh AI Labs</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <div class="section fade">
+  <section id="home" class="hero">
+    <h2>Innovating the Future with Intelligence</h2>
+    <p>We create AI tools that empower people and businesses through technology, automation, and innovation.</p>
+  </section>
+
+  <section id="about" class="section">
     <h3>About Us</h3>
-    <p>
-      Welcome to <b>Harsh AI Labs</b> — a creative hub where innovation meets intelligence.
-      We build smart solutions, automation tools, and AI-based web projects that empower the future.
-    </p>
-  </div>
+    <p>Harsh AI Labs is a visionary initiative building accessible, ethical, and creative AI solutions for everyone — from content creators to entrepreneurs.</p>
+  </section>
 
-  <div class="section fade">
-    <h3>Our Projects</h3>
-    <p>Coming Soon... exciting AI projects are in development! ⚙️🤖</p>
-    <button onclick="alert('Stay tuned for AI projects! 🚀')">Notify Me</button>
-  </div>
+  <section id="projects" class="section">
+    <h3>Our AI Tools</h3>
+    <div class="projects">
+      <div class="card">
+        <h4>ChatBot Assistant</h4>
+        <p>Engage in natural conversations and boost productivity using smart chat automation.</p>
+      </div>
+      <div class="card">
+        <h4>AI Image Generator</h4>
+        <p>Transform ideas into visuals instantly using advanced generative AI models.</p>
+      </div>
+      <div class="card">
+        <h4>Excel AI Helper</h4>
+        <p>Automate calculations, visualize data, and create reports in seconds with AI.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="section fade">
+  <section id="contact" class="section">
     <h3>Contact Us</h3>
-    <p>Email: <a href="mailto:harshailabs@gmail.com" style="color:#00d4ff;">harshailabs@gmail.com</a></p>
-  </div>
+    <form action="https://formsubmit.co/harshjhadon@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    © 2025 Harsh AI Labs | Built with ❤️ and Intelligence
+    © 2025 Harsh AI Labs — Innovating with Intelligence
   </footer>
+
 </body>
 </html>
-<!-- 🌟 PROJECTS SECTION -->
-<section id="projects" style="padding:60px 20px; background-color:#0b1220; color:white; text-align:center;">
-  <h2 style="font-size:2em; margin-bottom:20px;">🚀 Our AI Projects</h2>
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-    <div style="background-color:#16213e; border-radius:12px; padding:20px; width:280px;">
-      <h3>🤖 AI Excel Assistant</h3>
-      <p>Smart assistant that automates Excel tasks using AI.</p>
-      <a href="#" style="color:#00b4d8; text-decoration:none;">Coming Soon</a>
-    </div>
-    <div style="background-color:#16213e; border-radius:12px; padding:20px; width:280px;">
-      <h3>🎬 AI Video Generator</h3>
-      <p>Transform text into stunning animated videos.</p>
-      <a href="#" style="color:#00b4d8; text-decoration:none;">Coming Soon</a>
-    </div>
-  </div>
-</section>
-
-<!-- ✉️ CONTACT FORM -->
-<section id="contact" style="padding:60px 20px; background-color:#081229; color:white; text-align:center;">
-  <h2 style="font-size:2em; margin-bottom:20px;">📩 Contact Us</h2>
-  <p>Have a question or project idea? Let's connect!</p>
-  <form action="https://formspree.io/f/mayzjzoy" method="POST" style="margin-top:20px;">
-    <input type="text" name="name" placeholder="Your Name" required 
-           style="padding:10px; margin:10px; width:80%; max-width:400px; border:none; border-radius:6px;">
-    <input type="email" name="email" placeholder="Your Email" required 
-           style="padding:10px; margin:10px; width:80%; max-width:400px; border:none; border-radius:6px;">
-    <textarea name="message" placeholder="Your Message" required 
-              style="padding:10px; margin:10px; width:80%; max-width:400px; height:100px; border:none; border-radius:6px;"></textarea><br>
-    <button type="submit" 
-            style="background-color:#00b4d8; color:white; padding:10px 20px; border:none; border-radius:6px; cursor:pointer;">
-      Send Message
-    </button>
-  </form>
-</section>
